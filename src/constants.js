@@ -1,0 +1,1 @@
+export const IMAGE_BASE_URL = "http://127.0.0.1:3520/uploads/";

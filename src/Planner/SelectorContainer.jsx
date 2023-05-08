@@ -1,4 +1,5 @@
 import React from "react";
+import { IMAGE_BASE_URL } from "../constants";
 
 
 const SelectorContainer = () => {
@@ -40,7 +41,19 @@ const SelectorContainer = () => {
                     ) 
                     : (stars.stars_array.length === 0
                         ? (<p className="w-full text-center text-base font-medium text-indigo-900">0 Stars</p>)
-                        : "ok")}
+                        : (
+                            <div className="w-full grid grid-cols-1 gap-3">
+                                {stars.stars_array.map((star) => (
+                                    <div 
+                                    key={star.id+star.name+star.linkToImage} 
+                                    className="w-full items-center justify-center flex flex-row flex-wrap gap-5 font-semibold text-violet-400">
+                                        <p>{star.id}:</p>
+                                        <p>{star.name}</p>
+                                        <img src={IMAGE_BASE_URL+star.linkToImage} alt={star.name} className="w-10 h-10"/>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
                 </div>
             </div>
             <div className="w-full flex flex-col flex-wrap gap-5">
