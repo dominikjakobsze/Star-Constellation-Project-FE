@@ -10,9 +10,9 @@ import {BsFillCloudRainHeavyFill} from "react-icons/bs";
 const SkyOptions = ({setPlanner}) => {
     const [fog,setFog] = React.useState(0);
     const [rain,setRain] = React.useState(0);
-    
+
     return (<>
-        <div className="w-full max-w-[1920px] bg-gray-700 md:p-5 grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="w-full max-w-[1920px] md:p-5 grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="w-full flex flex-row flex-wrap items-center justify-center md:justify-start gap-1">
                 <p className="text-center flex-[0_0_20%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">Fog</p>
                 <BsCloudFog2Fill className="flex-[0_0_10%] object-contain h-[25px] text-violet-400"/>

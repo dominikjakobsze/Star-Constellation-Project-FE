@@ -1,5 +1,5 @@
 import React from "react";
-import { IMAGE_BASE_URL } from "../constants";
+import { IMAGE_BASE_URL, BASE_URL } from "../constants";
 
 
 const SelectorContainer = ({setPlanner}) => {
@@ -10,7 +10,7 @@ const SelectorContainer = ({setPlanner}) => {
 
     const fetchAllStars = async () => {
         try {
-          const response = await fetch('http://localhost:3520/stars');
+          const response = await fetch(BASE_URL+'/stars');
           const data = await response.json();
           setStars((prev) => data);
         } catch (error) {
@@ -20,7 +20,7 @@ const SelectorContainer = ({setPlanner}) => {
 
     const fetchAllConstellations = async () => {
         try {
-          const response = await fetch('http://localhost:3520/constellations');
+          const response = await fetch(BASE_URL+'/constellations');
           const data = await response.json();
           setConstellations((prev) => data);
         } catch (error) {
