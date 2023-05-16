@@ -23,6 +23,9 @@ const PlannerBoard = () => {
     return (<>
         <div className="w-full max-w-screen flex flex-col flex-wrap items-start justify-start">
             <div className="w-full max-w-[1920px] justify-start items-start bg-gray-900 min-h-screen p-5 flex flex-col flex-wrap gap-10">
+                <h3 onClick={() => {
+                    window.location.href = FRONT_URL;
+                }} className="cursor-pointer underline my-3 w-full text-center font-underline text-base text-blue-500">Main Menu</h3>
                 <h1 className="text-center w-full text-3xl font-bold text-gray-50">Create new sky</h1>
                 <div className="w-full flex flex-col flex-wrap items-center justify-center">
                     <input type="date" className="w-[280px]" onChange={(event) => {
