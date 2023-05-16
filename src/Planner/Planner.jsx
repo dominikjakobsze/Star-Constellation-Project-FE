@@ -2,11 +2,14 @@ import React from "react";
 import Selector from "./SelectorContainer";
 import SkyOptions from "./SkyOptions";
 import { BASE_URL, FRONT_URL } from "../constants";
+import { useParams } from "react-router-dom";
+
 
 const Planner = () => {
+  const { date } = useParams();
 
   const [planner, setPlanner] = React.useState({
-    date: "2021-10-16",
+    date: date,
     stars: [],
     constellations: [],
     fog: 0,
@@ -41,8 +44,8 @@ const Planner = () => {
         console.log(e);
       }
     }}>send</p>
-    <div className="w-full max-w-screen flex flex-col flex-wrap items-center justify-center">
-        <div className="w-full max-w-[1920px] bg-gray-900 p-5 grid grid-cols-1 gap-5">
+    <div className="w-full max-w-screen flex flex-col flex-wrap items-start justify-start">
+        <div className="w-full max-w-[1920px] justify-start items-start bg-gray-900 min-h-screen p-5 flex flex-col flex-wrap gap-5">
             <h1 className="mt-10 mb-10 w-full text-center font-bold text-3xl text-gray-50">{planner.date}</h1>
             <SkyOptions setPlanner={setPlanner}/>
             <Selector setPlanner={setPlanner}/>

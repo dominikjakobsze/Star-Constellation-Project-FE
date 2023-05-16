@@ -3,11 +3,6 @@ import {BsCloudFog2Fill} from "react-icons/bs";
 import {BsFillCloudRainHeavyFill} from "react-icons/bs";
 import {BsFillMoonFill} from "react-icons/bs";
 
-//faza ksiezyca
-//opady atmosferyczne => jesli na niebie nie ma chmur to nie ma opadow
-//gestosc mgly
-//poziom zachmurzenia
-
 const SkyOptions = ({setPlanner}) => {
     const [fog,setFog] = React.useState(0);
     const [rain,setRain] = React.useState(0);
