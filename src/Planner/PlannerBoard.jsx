@@ -41,7 +41,18 @@ const PlannerBoard = () => {
                             : planners.planners?.map((plannerItem) => (
                                 <div key={plannerItem.id}  className="bg-gray-800 gap-3 py-1 px-4 flex flex-row flex-wrap justify-center items-center cursor-pointer">
                                     <h1 className="font-semibold text-xl text-purple-400" >{plannerItem.nightSkyDate.substring(0,10)}</h1>
-                                    <BsFillTrash2Fill className="w-[30px] h-[30px] text-gray-900 object-contain hover:text-red-400"/>
+                                    <BsFillTrash2Fill className="w-[30px] h-[30px] text-gray-900 object-contain hover:text-red-400" onClick={async () => {
+                                        try{
+                                            const result = await fetch(`${BASE_URL}/planner/${plannerItem.id}`, {
+                                                method: "DELETE",
+                                            });
+                                            const data = await result.json();
+                                            window.location.reload();
+                                        }catch(error){
+                                            console.log(error);
+                                            window.location.reload();
+                                        }
+                                    }}/>
                                 </div>
                             ))
                     )}
