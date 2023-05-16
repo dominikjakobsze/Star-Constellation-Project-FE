@@ -22,7 +22,6 @@ const PlannerDetails = () => {
         const trimmedStringConstellations = data.planner.constellationList.substring(1, data.planner.constellationList.length - 1);
         data.planner.starsList = JSON.parse(trimmedStringStars);
         data.planner.constellationList = JSON.parse(trimmedStringConstellations);
-        console.log(data);
         setPlanner((prev) => data);
       }
     } catch (error) {
@@ -43,10 +42,42 @@ const PlannerDetails = () => {
             <p className="w-full text-center text-base font-medium text-indigo-900">Loading...</p>
           ) : (
             <>
-                <div className="w-full flex flex-row flex-wrap items-center justify-center gap-1">
+                <h1 className="text-3xl text-gray-50 font-bold text-center w-full mt-10">{planner.planner.nightSkyDate.substring(0,10)}</h1>
+                <div className="w-full flex flex-row flex-wrap items-center justify-center gap-1 mt-10">
                     <p className="text-center flex-[0_0_20%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">Fog</p>
                     <BsCloudFog2Fill className="flex-[0_0_10%] object-contain h-[25px] text-violet-400"/>
                     <p className="text-center flex-[0_0_17%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">{planner.planner.fog}</p>
+                </div>
+                <div className="w-full flex flex-row flex-wrap items-center justify-center gap-1">
+                    <p className="text-center flex-[0_0_20%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">Rain</p>
+                    <BsFillCloudRainHeavyFill className="flex-[0_0_10%] object-contain h-[25px] text-violet-400"/>
+                    <p className="text-center flex-[0_0_17%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">{planner.planner.rain}</p>
+                </div>
+                <div className="w-full flex flex-row flex-wrap items-center justify-center gap-1">
+                    <p className="text-center flex-[0_0_20%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">Moon</p>
+                    <BsFillMoonFill className="flex-[0_0_10%] object-contain h-[25px] text-violet-400"/>
+                    <p className="text-center flex-[0_0_17%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">{planner.planner.moon}</p>
+                </div>
+                <div className="w-full flex flex-row flex-wrap items-center justify-center gap-1">
+                    <p className="text-center flex-[0_0_20%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">Clouds</p>
+                    <BsFillCloudsFill className="flex-[0_0_10%] object-contain h-[25px] text-violet-400"/>
+                    <p className="text-center flex-[0_0_17%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">{planner.planner.clouds}</p>
+                </div>
+                <h1 className="text-2xl text-gray-50 font-bold text-center w-full mt-10">Stars ID that will be seen that night</h1>
+                <div className="w-full flex flex-row flex-wrap items-center justify-center gap-3">
+                    {planner.planner.starsList.map((star) => {
+                        return(
+                            <p className="text-xl text-indigo-300 cursor-pointer">{star}</p>
+                        )
+                    })}
+                </div>
+                <h1 className="text-2xl text-gray-50 font-bold text-center w-full mt-10">Constellations ID that will be seen that night</h1>
+                <div className="w-full flex flex-row flex-wrap items-center justify-center gap-3">
+                    {planner.planner.constellationList.map((constellation) => {
+                        return(
+                            <p className="text-xl text-indigo-300 cursor-pointer">{constellation}</p>
+                        )
+                    })}
                 </div>
             </>
           )}
