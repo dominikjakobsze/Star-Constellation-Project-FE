@@ -15,8 +15,8 @@ const SkyOptions = ({setPlanner}) => {
     const [clouds,setClouds] = React.useState(0);
 
     return (<>
-        <div className="w-full max-w-[1920px] md:p-5 grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div className="w-full flex flex-row flex-wrap items-center justify-center md:justify-start gap-1">
+        <div className="w-full max-w-[1920px] md:p-5 grid grid-cols-1 md:grid-cols-1 gap-10">
+            <div className="w-full flex flex-row flex-wrap items-center justify-center gap-1">
                 <p className="text-center flex-[0_0_20%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">Fog</p>
                 <BsCloudFog2Fill className="flex-[0_0_10%] object-contain h-[25px] text-violet-400"/>
                 <input
@@ -38,7 +38,7 @@ const SkyOptions = ({setPlanner}) => {
                 />
                 <p className="text-center flex-[0_0_17%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">{fog}</p>
             </div>
-            <div className="w-full flex flex-row flex-wrap items-center justify-center md:justify-start gap-1">
+            <div className="w-full flex flex-row flex-wrap items-center justify-center gap-1">
                 <p className="text-center flex-[0_0_20%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">Rain</p>
                 <BsFillCloudRainHeavyFill className="flex-[0_0_10%] object-contain h-[25px] text-violet-400"/>
                 <input
@@ -64,7 +64,7 @@ const SkyOptions = ({setPlanner}) => {
                 />
                 <p className="text-center flex-[0_0_17%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">{rain}</p>
             </div>
-            <div className="w-full flex flex-row flex-wrap items-center justify-center md:justify-start gap-1">
+            <div className="w-full flex flex-row flex-wrap items-center justify-center gap-1">
                 <p className="text-center flex-[0_0_20%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">Moon</p>
                 <BsFillMoonFill className="flex-[0_0_10%] object-contain h-[25px] text-violet-400"/>
                 <input
@@ -86,7 +86,7 @@ const SkyOptions = ({setPlanner}) => {
                 />
                 <p className="text-center flex-[0_0_17%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">{moon}</p>
             </div>
-            <div className="w-full flex flex-row flex-wrap items-center justify-center md:justify-start gap-1">
+            <div className="w-full flex flex-row flex-wrap items-center justify-center gap-1">
                 <p className="text-center flex-[0_0_20%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">Clouds</p>
                 <BsFillMoonFill className="flex-[0_0_10%] object-contain h-[25px] text-violet-400"/>
                 <input
@@ -101,6 +101,10 @@ const SkyOptions = ({setPlanner}) => {
                     onChange={(e) => {
                         if(Number(e.target.value) === 0){
                             setRain(0);
+                            setPlanner((prev) => ({
+                            ...prev,
+                            rain: Number(0),
+                        }));
                         }
                         setClouds(Number(e.target.value));
                         setPlanner((prev) => ({

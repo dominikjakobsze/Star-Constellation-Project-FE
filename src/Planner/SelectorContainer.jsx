@@ -66,7 +66,7 @@ const SelectorContainer = ({setPlanner}) => {
       }, []);
 
     return (<>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="w-full grid grid-cols-1 gap-10">
             <div className="w-full flex flex-col flex-wrap gap-5">
                 <h1 className="w-full text-violet-400 font-bold text-xl text-center">Star Selector</h1>
                 <div className="w-full flex flex-col flex-wrap border-2 border-indigo-900 p-3 rounded-lg max-h-[400px] overflow-x-hidden overflow-y-auto">
