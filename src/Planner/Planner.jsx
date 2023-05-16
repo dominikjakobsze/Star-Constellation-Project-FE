@@ -9,6 +9,8 @@ const Planner = () => {
     constellations: [],
     fog: 0,
     rain: 0,
+    moon: 1,
+    clouds: 0,
   });
 
   return (<>
