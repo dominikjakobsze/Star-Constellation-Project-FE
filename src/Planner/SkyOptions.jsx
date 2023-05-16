@@ -2,6 +2,7 @@ import React from "react";
 import {BsCloudFog2Fill} from "react-icons/bs";
 import {BsFillCloudRainHeavyFill} from "react-icons/bs";
 import {BsFillMoonFill} from "react-icons/bs";
+import {BsFillCloudsFill} from "react-icons/bs";
 
 const SkyOptions = ({setPlanner}) => {
     const [fog,setFog] = React.useState(0);
@@ -83,7 +84,7 @@ const SkyOptions = ({setPlanner}) => {
             </div>
             <div className="w-full flex flex-row flex-wrap items-center justify-center gap-1">
                 <p className="text-center flex-[0_0_20%] md:flex-[0_0_10%] object-contain h-[25px] text-violet-400 font-semibold">Clouds</p>
-                <BsFillMoonFill className="flex-[0_0_10%] object-contain h-[25px] text-violet-400"/>
+                <BsFillCloudsFill className="flex-[0_0_10%] object-contain h-[25px] text-violet-400"/>
                 <input
                     id="clouds"
                     name="clouds"

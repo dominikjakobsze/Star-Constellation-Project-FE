@@ -4,6 +4,7 @@ import NotFound from "./reusable/NotFound/NotFound";
 import Planner from "./Planner/Planner";
 import PlannerBoard from "./Planner/PlannerBoard";
 import StarManagement from "./StarManagement/StarManagement"
+import PlannerDetails from "./Planner/PlannerDetails";
 
 //define all you need here like route etc!
 //to match expected colors, you can use the following classes: violet-400, indigo-900, gray-900
@@ -19,6 +20,7 @@ const Entry = () => {
                     <Route path="/planner" element={<PlannerBoard />} />
                     <Route path="/planner/add/:date" element={<Planner />} />
                     <Route path="/StarManagement" element={<StarManagement />} />
+                    <Route path="/planner/details/:plannerId" element={<PlannerDetails/>} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
                 { /* //here you can define menu to make be available on all pages or any other components that are supposed to be on all pages */}
