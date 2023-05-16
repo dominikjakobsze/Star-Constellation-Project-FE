@@ -17,7 +17,6 @@ const Entry = () => {
                     <Route path="/about" element={"about"} />
                     <Route path="/planner" element={<PlannerBoard/>} />
                     <Route path="/planner/add/:date" element={<Planner/>} />
-                    <Route path="/planner/add/:date" element={<Planner/>} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
                 { /* //here you can define menu to make be available on all pages or any other components that are supposed to be on all pages */ }

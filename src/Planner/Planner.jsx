@@ -36,7 +36,7 @@ const Planner = () => {
         });
         const resultjson = await result.json();
         if(Number(resultjson.status_code) === 200){
-          window.location.href = FRONT_URL;
+          window.location.href = FRONT_URL+"/planner";
         }else{
           window.location.reload();
         }
