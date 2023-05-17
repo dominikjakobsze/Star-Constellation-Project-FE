@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./reusable/NotFound/NotFound";
 import Planner from "./Planner/Planner";
 import PlannerBoard from "./Planner/PlannerBoard";
-import StarManagement from "./StarManagement/StarManagement"
+import SpaceManagement, { STARS_TYPE, CONSTELLATIONS_TYPE } from "./SpaceManagement/SpaceManagement";
 import PlannerDetails from "./Planner/PlannerDetails";
 
 //define all you need here like route etc!
@@ -19,8 +19,9 @@ const Entry = () => {
                     <Route path="/about" element={"about"} />
                     <Route path="/planner" element={<PlannerBoard />} />
                     <Route path="/planner/add/:date" element={<Planner />} />
-                    <Route path="/StarManagement" element={<StarManagement />} />
-                    <Route path="/planner/details/:plannerId" element={<PlannerDetails/>} />
+                    <Route path="/starManagement" element={<SpaceManagement collectionType={STARS_TYPE} />} />
+                    <Route path="/constellationManagement" element={<SpaceManagement collectionType={CONSTELLATIONS_TYPE} />} />
+                    <Route path="/planner/details/:plannerId" element={<PlannerDetails />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
                 { /* //here you can define menu to make be available on all pages or any other components that are supposed to be on all pages */}
